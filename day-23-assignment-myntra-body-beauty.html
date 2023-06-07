@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://kit.fontawesome.com/8624324425.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #screen {
+            /* border: 1px solid black; */
+            width: 100%;
+        }
+
+        #navBar {
+            height: 100px;
+            width: 100%;
+            /* border: 1px solid black; */
+            display: flex;
+            justify-content: space-around;
+            background-color: #ffffff;
+            position: fixed;
+            top: 0;
+            z-index: 1;
+        }
+
+        #leftInnerDiv {
+            height: 100px;
+            width: 50%;
+            /* border: 1px solid black; */
+            display: flex;
+            align-items: center;
+        }
+
+        #logo {
+            height: 80px;
+            width: 15%;
+            /* border: 1px solid black; */
+            padding: 10px;
+            display: flex;
+            align-items: center;
+
+        }
+
+        #logo>a>img {
+            height: 100%;
+            width: 100%;
+            padding: 5px;
+            /* border: 1px solid black; */
+
+        }
+
+        #cat {
+            height: 80px;
+            width: 80%;
+            /* border: 1px solid black; */
+            padding: 10px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-around;
+            flex-flow: row wrap;
+            align-items: stretch;
+        }
+
+        .catList {
+            height: 60px;
+            width: 80px;
+            /* border: 1px solid black; */
+            padding: 5px;
+            font-size: small;
+            display: flex;
+            justify-content: space-around;
+            flex-flow: row wrap;
+            align-items: center;
+
+
+        }
+
+        .catList>a {
+            text-decoration: none;
+            color: black;
+        }
+
+        #rightInnerDiv {
+            height: 100px;
+            width: 55%;
+            /* border: 1px solid black; */
+            display: flex;
+            align-items: center;
+        }
+
+        #rightInput {
+            height: 60px;
+            width: 60%;
+            /* border: 1px solid black; */
+            padding: 5px;
+            display: flex;
+            justify-content: space-around;
+            flex-flow: row wrap;
+            align-items: center;
+        }
+
+        #rightInput>div {
+            height: 20px;
+            width: 100%;
+            /* border: 1px solid black; */
+            background-color: #f5f5f6;
+            padding: 5px;
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+
+        }
+
+        #rightInput>div>input {
+            width: 90%;
+            border: none;
+            background-color: #f5f5f6;
+        }
+
+
+        #rightIcon {
+            height: 60px;
+            width: 35%;
+            /* border: 1px solid black; */
+            padding: 5px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        #rightIcon>div:nth-child(1)>p:nth-child(2)>a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .icon {
+            height: 60px;
+            width: 25%;
+            /* border: 1px solid black; */
+            padding: 5px;
+            text-align: center;
+        }
+
+        .icon>i {
+            margin-top: 10px;
+        }
+
+        #rightIcon>div:nth-child(3)>p:nth-child(2)>a {
+            text-decoration: none;
+            color: black;
+        }
+
+        #body {
+            /* border: 1px solid black; */
+            /* height: 400vh; */
+            width: 100%;
+            margin-top: 91px;
+        }
+
+        #filter-header {
+            /* border: 1px solid black; */
+            width: 100%;
+            margin-top: 8%;
+        }
+
+        #filter-header>p {
+            margin-top: 2%;
+        }
+
+        #inner-filter {
+            height: 40px;
+            /* border: 1px solid black; */
+            display: flex;
+            align-items: center;
+        }
+
+        #select-div {
+            /* border: 1px solid black; */
+            display: flex;
+            justify-content: space-between;
+            width: 55%;
+            margin-left: 16%;
+            align-items: center;
+        }
+
+        #select-div>select {
+            height: 30px;
+            display: inline;
+            border-radius: 10px;
+            border: none;
+        }
+
+        #select-div>select:hover {
+            border-radius: 10px;
+            border: 1px solid rgb(231, 229, 229);
+            background-color: rgb(231, 229, 229);
+        }
+
+        #sort {
+            border: 1px solid black;
+            height: 30px;
+            width: 20%;
+            display: flex;
+            margin-left: auto;
+            margin-right: 0;
+            align-items: center;
+        }
+
+        #sort>select {
+            height: 15px;
+            margin-left: 10px;
+            border: none;
+            outline: none;
+        }
+
+        #inner-body-align {
+            /* border: 1px solid black; */
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        #inner-body-align-for-left {
+            border: 1px solid rgb(227, 226, 226);
+            width: 16%;
+
+        }
+
+        #inner-body-align-for-left>div{
+            border-bottom: 1px solid rgb(227, 226, 226);
+        }
+
+        #inner-body-align-for-left>div:nth-child(1)>h4:nth-child(1) {
+            height: 40px;
+            /* border: 1px solid black; */
+            display: flex;
+            align-items: center;
+
+        }
+        #inner-body-align-for-left>div:nth-child(3)>h4{
+        margin-bottom: -1%;
+        }
+
+        #inner-body-align-for-left>div:nth-child(3)>input:nth-child(11),
+        label:nth-child(12){
+            margin-bottom: 5%;
+        }
+
+        #inner-body-align-for-left>div:nth-child(2)>input,
+        label {
+            margin-top: 1%;
+        }
+
+        #inner-body-align-for-left>div:nth-child(2)>input:nth-child(24),
+        label:nth-child(25) {
+            margin-bottom: 25px;
+        }
+
+        #inner-body-align-for-left>div:nth-child(2)>p:nth-child(26) {
+            color: red;
+        }
+
+        #search-catalog {
+            /* border: 1px solid black; */
+            display: flex;
+            align-items: center;
+            height: 40px;
+        }
+
+        #search-catalog>i {
+            margin-left: auto;
+            margin-right: 5%;
+        }
+
+        #inner-body-align-for-left>div:nth-child(3)>input:nth-child(2),
+        label:nth-child(3) {
+            margin-top: 15px;
+        }
+
+        #inner-body-align-for-left>div:nth-child(3)>p:last-child {
+            color: red;
+        }
+
+        .color-showing-span {
+            /* border: 1px solid black; */
+            display: inline-block;
+            height: 10px;
+            width: 10px;
+            border-radius: 50%;
+
+        }
+
+        #inner-body-align-for-left>div:nth-child(1)>input,
+        label {
+            margin-top: 2%;
+        }
+
+        #inner-body-align-for-left>div:nth-child(5)>div:nth-child(1) {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        #inner-body-align-for-left>div:nth-child(5)>p:nth-child(30) {
+            color: red;
+            margin-left: 15%;
+        }
+
+        #inner-body-align-for-left>div:nth-child(5)>span {
+            display: inline-block;
+            /* border: 1px solid black; */
+            border-radius: 50%;
+        }
+
+        #inner-body-align-for-right {
+            /* border: 1px solid black; */
+            width: 82%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-left: 2%;
+            margin-right: auto;
+        }
+
+        .product-showing-div-slide {
+            /* border: 1px solid black; */
+            height: 400px;
+            width: 18%;
+            margin-top: 2%;
+        }
+
+
+        .product-showing-div-slide>strong,
+        p {
+
+            margin-left: 10px;
+            line-height: 2px;
+        }
+
+        .product-showing-div-slide>span:nth-child(7) {
+            color: orange;
+        }
+
+        .product-showing-div-slide>del:nth-child(6) {
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+
+        .product-img {
+            /* border: 1px solid black; */
+            height: 310px;
+            width: 100%;
+
+        }
+
+        .orange {
+            color: orange;
+            margin-left: 5px;
+        }
+
+        .product-rating-within-product-img {
+            /* border: 1px solid black; */
+            height: 30px;
+            width: auto;
+            background-color: white;
+            position: absolute;
+            margin-top: 18%;
+            margin-left: 0.5%;
+            display: flex;
+            align-items: center;
+
+        }
+
+
+        .product-rating-within-product-img>i {
+            font-size: 9px;
+            margin-left: 2%;
+            color: green;
+
+        }
+
+        .product-img>img {
+            height: 100%;
+            width: 100%;
+        }
+
+        .product-showing-div-slide>strong:nth-child(4)>del {
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+
+        /* .product-showing-div-slide:hover {
+            transform: scale(1.1);
+        } */
+
+        .wishList {
+            border: 1px solid rgb(84, 168, 84);
+            background-color: rgb(84, 168, 84);
+            color: white;
+            border-radius: 10px;
+            height: 25px;
+            width: 80%;
+            margin: auto;
+            text-align: center;
+            margin-top: 3px;
+            display: none;
+            align-items: center;
+            padding-top: 1%;
+        }
+
+        .wishList>a {
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="screen">
+        <div id="navBar">
+            <div id="leftInnerDiv">
+                <div id="logo">
+                    <a href="day-16-assignment.html">
+                        <img src="https://images.indianexpress.com/2021/01/myntra.png"></img>
+                    </a>
+                </div>
+                <div id="cat">
+                    <div class="catList"><a href="day-17-assignment- myntra-body.html">MEN</a></div>
+                    <div class="catList"><a href="day-23-assignment-myntra-body-women.html">WOMEN</a></div>
+                    <div class="catList"><a href="day-23-assignment-myntra-body-kids.html">KIDS</a></div>
+                    <div class="catList"><a href="day-23-assignment-myntra-body-homeNLiving.html">HOME & LIVING</a></div>
+                    <div class="catList"><a href="day-23-assignment-myntra-body-beauty.html">BEAUTY</a></div>
+                    <div class="catList">STUDIO<sub>NEW</sub></div>
+                </div>
+            </div>
+            <div id="rightInnerDiv">
+                <div id="rightInput">
+                    <div><i class="fa-solid fa-magnifying-glass"></i><input
+                            placeholder="Search for product, brands and more" /></div>
+                </div>
+                <div id="rightIcon">
+                    <div class="icon">
+                        <i class="fa-regular fa-user"></i>
+                        <p><a href="day-18-assign-myntra-profile.html">Profile</a></p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa-regular fa-heart"></i>
+                        <p>Wishlist</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        <p><a href="day-18-assign-myntra-cart.html">Bag</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="body">
+            <div id="filter-header">
+                <p>Home / Clothing / Body Wash And Scrub <strong> Body Scrub</strong></p>
+                <p><strong>Body Scrub</strong>- 330 items</p>
+                <div id="inner-filter">
+                    <strong>FILTERS</strong>
+                    <div id="select-div">
+                        <select>
+                            <option>Bundles</option>
+                        </select>
+                        <select>
+                            <option>concern</option>
+                        </select>
+                        <select>
+                            <option>Country of origin</option>
+                        </select>
+                        <select>
+                            <option>Formulation</option>
+                        </select>
+                        <select>
+                            <option>Fragrance</option>
+                        </select>
+                        <select>
+                            <option>Key Ingredient</option>
+                        </select>
+                        <select>
+                            <option>preference</option>
+                        </select>
+                        <p><b>+ 5 more</b></p>
+                    </div>
+                    <div id="sort">
+                        <p>Sort By:<strong>Recommended</strong></p>
+                        <select></select>
+                    </div>
+                </div>
+            </div>
+            <div id="inner-body-align">
+                <!-- for left side  -->
+                <div id="inner-body-align-for-left">
+                    <!-- first division left side  -->
+                    <div>
+                        <input type="checkbox" />
+                        <label><b>Men</b></label><br />
+                        <input type="checkbox" />
+                        <label><b>Women</b></label><br />
+                        <!-- <input type="checkbox" />
+                        <label><b>Boys</b></label><br /> -->
+                        <input type="checkbox" />
+                        <label><b>Girls</b></label><br />
+                    </div>
+                    <!-- second division left side  -->
+                    <!-- <div>
+                        <h4>CATEGORIES</h4>
+                        <input type="checkbox" />
+                        <label>Bedsheets (24550)</label><br />
+                        <input type="checkbox" />
+                        <label>Wall Art (20520)</label><br />
+                        <input type="checkbox" />
+                        <label>Cushion Covers (15176)</label><br />
+                        <input type="checkbox" />
+                        <label>Curtains and Sheers (12295)</label><br />
+                        <input type="checkbox" />
+                        <label>Table Lamps (5608)</label><br />
+                        <input type="checkbox" />
+                        <label>Organisers (5357)</label><br />
+                        <input type="checkbox" />
+                        <label>Blankets Quilts and Do..(5..)</label><br />
+                        <input type="checkbox" />
+                        <label>Showpieces (4801)</label><br />
+                        <p>+ 120 More</p>
+                    </div> -->
+                    <!-- third division left side  -->
+                    <div>
+                        <div id="search-catalog">
+                            <h4>BRAND</h4>
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </div>
+                        <input type="checkbox" />
+                        <label>ESSENTIA EXTRACTS (43)</label><br />
+                        <input type="checkbox" />
+                        <label>MCaffeine (27)</label><br />
+                        <input type="checkbox" />
+                        <label>Cuccio (17)</label><br />
+                        <input type="checkbox" />
+                        <label>nat Habit (16)</label><br />
+                        <input type="checkbox" />
+                        <label>GEMBLUE BioCare (10)</label><br />
+                        <input type="checkbox" />
+                        <label>Marks & Spencer (9)</label><br />
+                        <input type="checkbox" />
+                        <label>THE BILLBERGIA (8)</label><br />
+                        <input type="checkbox" />
+                        <label>BodyHerbals (8)</label><br />
+                        <p>+ 91 more</p>
+                    </div>
+                    <!-- fourth division left side  -->
+                    <div>
+                        <h4>PRICE</h4>
+                        <input type="checkbox" />
+                        <label>Rs. 144 to Rs. 1333 (294)</label><br />
+                        <input type="checkbox" />
+                        <label>Rs. 1333 to Rs. 2522 (27)</label><br />
+                        <input type="checkbox" />
+                        <label>Rs. 2522 to Rs. 3711 (3)</label><br />
+                        <input type="checkbox" />
+                        <label>Rs. 3711 to Rs. 4900 (5)</label><br />
+                    </div>
+                    <!-- fifth division left side  -->
+                    <div>
+                        <div id="search-catalog">
+                            <h4>COLOR</h4>
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </div>
+                        <input type="checkbox" />
+                        <span class="color-showing-span" style="background-color:brown;"></span>
+                        <label>Brown (80)</label><br />
+                        <input type="checkbox" />
+                        <span class="color-showing-span" style="border:1px solid black;background-color:white;"></span>
+                        <label>White (756)</label><br />
+                        <input type="checkbox" />
+                        <span class="color-showing-span" style="background-color:pink;"></span>
+                        <label>Pink (26)</label><br />
+                        <input type="checkbox" />
+                        <span class="color-showing-span" style="background-color:blue;"></span>
+                        <label>Blue (24)</label><br />
+                        <input type="checkbox" />
+                        <span class="color-showing-span" style="background-color:green;"></span>
+                        <label>Green (22)</label><br />
+                        <input type="checkbox" />
+                        <span class="color-showing-span" style="background-color:orange;"></span>
+                        <label>Orange (20)</label><br />
+                        <input type="checkbox" />
+                        <span class="color-showing-span" style="background-color:yellow;"></span>
+                        <label>Yellow (19)</label><br />
+                        <p>+ 17 more</p>
+                    </div>
+                </div>
+                <div id="inner-body-align-for-right">
+                    <!-- first product  -->
+                    <div class="product-showing-div-slide">
+                        <div class="product-rating-within-product-img">4.6 <i class="fa-solid fa-star"></i> |23k </div>
+                        <div class="product-img">
+                            <img
+                                src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/10901940/2022/8/4/ecbeb48e-81aa-4355-b9ff-2e693dc80d4c1659620716962-MCaffeine-Sustainable-Exfoliating-Coffee-Body-Scrub-for-Tan--12.jpg" />
+                        </div>
+                        <div class="wishList"> Wishlist <i class="fa-regular fa-heart"></i></div>
+                        <strong>MCaffeine</strong>
+                        <p>Exfoliating Coffee Body Scrub</p>
+                        <strong>Rs.395</strong><del>Rs.499</del><span class="orange">(12% OFF)</span>
+                    </div>
+                    <!-- second product  -->
+                    <div class="product-showing-div-slide">
+                        <div class="product-rating-within-product-img">4.5 <i class="fa-solid fa-star"></i> |2.5K </div>
+                        <div class="product-img">
+                            <img
+                                src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17736548/2022/8/4/456b1940-0b01-46f1-9591-49d7f5ca66e81659595048411-MCaffeine-Exfoliating-Coffee-Body-Scrub-for-Tan-Removal--Sof-13.jpg" />
+                        </div>
+                        <div class="wishList"> Wishlist <i class="fa-regular fa-heart"></i></div>
+                        <strong>MCaffeine</strong>
+                        <p>Exfoliating Coffee Body Scrub</p>
+                        <strong>Rs.251</strong><del>Rs.279</del><span class="orange">(10%OFF)</span>
+                    </div>
+                    <!-- third product  -->
+                    <div class="product-showing-div-slide">
+                        <div class="product-rating-within-product-img">4.4 <i class="fa-solid fa-star"></i> |17
+                        </div>
+                        <div class="product-img">
+                            <img
+                                src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/15855114/2021/11/2/97020bf3-d4e7-4e30-9ad0-3884ee5e00ab1635853209317-Marks--Spencer-Women-Body-Wash-and-Scrub-1061635853209143-1.jpg" />
+                        </div>
+                        <div class="wishList"> Wishlist <i class="fa-regular fa-heart"></i></div>
+                        <strong>Marks & Spencer</strong>
+                        <p>Women Body Scrub 250ml</p>
+                        <strong>Rs.299</strong><del>Rs.399</del><span class="orange">(25%OFF)</span>
+                    </div>
+                    <!-- fourth product  -->
+                    <div class="product-showing-div-slide">
+                        <div class="product-rating-within-product-img">4.6 <i class="fa-solid fa-star"></i> |11 </div>
+                        <div class="product-img">
+                            <img
+                                src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/15855108/2021/11/2/4a5dfe59-62a2-44a7-a128-75e75a1658351635853030405-Marks--Spencer-Women-Body-Wash-and-Scrub-5541635853030216-1.jpg" />
+                        </div>
+                        <div class="wishList"><a href="day-13-assignment-roadster-tshrist.html">Wishlist </a><i
+                                class="fa-regular fa-heart"></i></div>
+                        <strong>Marks & Spencer</strong>
+                        <p>Body Scrub 250 ml</p>
+                        <strong>Rs.449</strong><del>Rs.599</del><span class="orange">(25%OFF)</span>
+                    </div>
+                    <!-- fifth product  -->
+                    <div class="product-showing-div-slide">
+                        <div class="product-rating-within-product-img">4.7 <i class="fa-solid fa-star"></i> |97
+                        </div>
+                        <div class="product-img">
+                            <img
+                                src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/21480498/2023/1/10/f303dcf8-168f-4812-8415-07790aac4be01673333412984BodyWashandScrub1.jpg" />
+                        </div>
+                        <div class="wishList"> Wishlist <i class="fa-regular fa-heart"></i></div>
+                        <strong>Be Bodywise</strong>
+                        <p>Underarm AHA BHA Roll on</p>
+                        <strong>Rs.349</strong><del>Rs.399</del><span class="orange">(50%OFF)</span>
+                    </div>
+                    <!-- sixth product  -->
+                    <div class="product-showing-div-slide">
+                        <div class="product-rating-within-product-img">4.8 <i class="fa-solid fa-star"></i> |8 </div>
+                        <div class="product-img">
+                            <img
+                                src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/20329960/2022/10/8/bfd406ea-9bf8-4801-a001-bddc3d15a7ce1665225673669BodyWashandScrub1.jpg" />
+                        </div>
+                        <div class="wishList"> Wishlist <i class="fa-regular fa-heart"></i></div>
+                        <strong>Marks & Spencer</strong>
+                        <p>Water Lily Shower 250ml</p>
+                        <strong>Rs.299</strong><del>Rs.399</del><span class="orange">(Rs.25% OFF)</span>
+                    </div>
+                    <!-- seventh product  -->
+                    <div class="product-showing-div-slide">
+                        <!-- <div class="product-rating-within-product-img">4.2 <i class="fa-solid fa-star"></i> |504 </div> -->
+                        <div class="product-img">
+                            <img
+                                src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/22622070/2023/4/3/6ea91ecc-9738-4b39-8bf8-990a797c5f1b1680517731246BodyWashandScrub1.jpg" />
+                        </div>
+                        <div class="wishList"> Wishlist <i class="fa-regular fa-heart"></i></div>
+                        <strong>Marks & Spencer</strong>
+                        <p>Provenance Ghanaian Body S..</p>
+                        <strong>Rs. 974</strong><del>Rs.1299</del><span class="orange">(25% OFF)</span>
+                    </div>
+                    <!-- eighth product  -->
+                    <div class="product-showing-div-slide">
+                        <div class="product-rating-within-product-img">4.6 <i class="fa-solid fa-star"></i> |110
+                        </div>
+                        <div class="product-img">
+                            <img
+                                src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/20756656/2022/11/24/fefe53dd-d7c2-4d9d-bf47-72ebfaad278f1669270375512-MCaffeine-Coffee-Body-Scrub--200gm-6261669270374889-1.jpg" />
+                        </div>
+                        <div class="wishList"> Wishlist <i class="fa-regular fa-heart"></i></div>
+                        <strong>MCaffeine</strong>
+                        <p>Coffee Body Scrub with Almonds</p>
+                        <strong>Rs.399</strong><del>Rs.449</del><span class="orange">(11%OFF)</span>
+                    </div>
+                    <!-- ninth product  -->
+                    <div class="product-showing-div-slide">
+                        <!-- <div class="product-rating-within-product-img">4.9 <i class="fa-solid fa-star"></i> |7 </div> -->
+                        <div class="product-img">
+                            <img
+                                src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17035790/2022/2/14/4f7048f4-a5c4-4bae-804b-77052bf1c8851644834748062-Marks--Spencer-Women-Body-Wash-and-Scrub-2151644834747857-1.jpg" />
+                        </div>
+                        <div class="wishList"> Wishlist <i class="fa-regular fa-heart"></i></div>
+                        <strong>Marks & Spencer</strong>
+                        <p>Greek Olive Body Scrub 300 ml</p>
+                        <strong>Rs.974</strong><del>Rs.1299</del><span class="orange">(25% OFF)</span>
+                    </div>
+                    <!-- tenth product  -->
+                    <div class="product-showing-div-slide">
+                        <div class="product-rating-within-product-img">4.8 <i class="fa-solid fa-star"></i> |9 </div>
+                        <div class="product-img">
+                            <img
+                                src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/20384546/2022/10/14/95f510c9-1baf-4b87-8877-7fbfb634eb451665729991508PureWonderExfoliatingGlowBodyScrub1.jpg" />
+                        </div>
+                        <div class="wishList"> Wishlist <i class="fa-regular fa-heart"></i></div>
+                        <strong>Bath & Body Works</strong>
+                        <p>Pure Wonder Body Scrub - 226g</p>
+                        <strong>Rs.1649</strong><del>Rs.1999</del><span class="orange">(Rs.350 OFF)</span>
+                    </div>
+                    <!-- eleventh product  -->
+                    <div class="product-showing-div-slide">
+                        <div class="product-rating-within-product-img">5 <i class="fa-solid fa-star"></i> |5 </div>
+                        <div class="product-img">
+                            <img
+                                src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17035780/2022/2/14/7f4ab67a-5b04-48d4-9ed1-6515bfe4ea411644828403572-Marks--Spencer-Women-Body-Wash-and-Scrub-901644828403236-1.jpg" />
+                        </div>
+                        <div class="wishList"> Wishlist <i class="fa-regular fa-heart"></i></div>
+                        <strong>Marks & Spencer</strong>
+                        <p>Provenance Body Scrub 300 ml</p>
+                        <strong>Rs.974</strong><del>Rs.1299</del><span class="orange">(25% OFF)</span>
+                    </div>
+                    <!-- tweleve product  -->
+                    <div class="product-showing-div-slide">
+                        <div class="product-rating-within-product-img">4.6 <i class="fa-solid fa-star"></i> |102 </div>
+                        <div class="product-img">
+                            <img
+                                src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/13461050/2021/8/11/d40516e5-38a5-48d0-83a1-e4a0122995131628671615329BathBodyWorksYouretheOneSparklingBodyScrub226g1.jpg" />
+                        </div>
+                        <div class="wishList"> Wishlist <i class="fa-regular fa-heart"></i></div>
+                        <strong>Bath & Body Works</strong>
+                        <p>Sparkling Body Scrub</p>
+                        <strong>Rs.1549</strong><del>Rs.1899</del><span class="orange">(Rs.350 OFF)</span>
+                    </div>
+                    <!-- thirteenth product  -->
+                    <div class="product-showing-div-slide">
+                        <!-- <div class="product-rating-within-product-img">4.7 <i class="fa-solid fa-star"></i> |166 </div> -->
+                        <div class="product-img">
+                            <img
+                                src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/13461050/2021/8/11/d40516e5-38a5-48d0-83a1-e4a0122995131628671615329BathBodyWorksYouretheOneSparklingBodyScrub226g1.jpg" />
+                        </div>
+                        <div class="wishList"> Wishlist <i class="fa-regular fa-heart"></i></div>
+                        <strong>Marks & Spencer</strong>
+                        <p>Bergamot Face & Body Scrub</p>
+                        <strong>Rs.599</strong><del>Rs.799</del><span class="orange">(25% OFF)</span>
+                    </div>
+                    <!-- fourteenth product  -->
+                    <div class="product-showing-div-slide">
+                        <!-- <div class="product-rating-within-product-img">4.2 <i class="fa-solid fa-star"></i> |32 -->
+                        <!-- </div> -->
+                        <div class="product-img">
+                            <img
+                                src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17035782/2022/2/14/35e57f00-7858-451b-bbef-24c48ed17b1d1644829161533-Marks--Spencer-Women-Body-Wash-and-Scrub-9491644829161309-1.jpg" />
+                        </div>
+                        <div class="wishList"> Wishlist <i class="fa-regular fa-heart"></i></div>
+                        <strong>Marks & Spencer</strong>
+                        <p>Provenance Body Scrub 300 ml</p>
+                        <strong>Rs.974</strong><del>Rs.1299</del><span class="orange">(25% OFF)</span>
+                    </div>
+                    <!-- fifteenth product  -->
+                    <div class="product-showing-div-slide">
+                        <div class="product-rating-within-product-img">4 <i class="fa-solid fa-star"></i> |20 </div>
+                        <div class="product-img">
+                            <img
+                                src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17218000/2022/2/18/255dae3d-7e3f-4a9e-b19c-a21479e2b61e1645204511020BodyCupidHimalayanRoseGoldScrub-200ml1.jpg" />
+                        </div>
+                        <div class="wishList"> Wishlist <i class="fa-regular fa-heart"></i></div>
+                        <strong>Body Cupid</strong>
+                        <p>Himalayan Rose Gold Sc..</p>
+                        <strong>Rs.197</strong><del>Rs.549</del><span class="orange">(64% OFF)</span>
+                    </div>
+                    <!-- sixteenth product  -->
+                    <div class="product-showing-div-slide">
+                        <!-- <div class="product-rating-within-product-img">4.4 <i class="fa-solid fa-star"></i> |12.7k -->
+                        <!-- </div> -->
+                        <div class="product-img">
+                            <img
+                                src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/22622050/2023/4/3/bd17bfe4-b6c1-4e4c-9833-662bd91725ac1680514392300BodyWashandScrub1.jpg" />
+                        </div>
+                        <div class="wishList"> Wishlist <i class="fa-regular fa-heart"></i></div>
+                        <strong>Marks & Spencer</strong>
+                        <p>Autograph Body Scrub-240 ml</p>
+                        <strong>Rs. 1124</strong><del>Rs.1499</del><span class="orange">(25% OFF)</span>
+                    </div>
+                    <!-- seventeenth product  -->
+                    <div class="product-showing-div-slide">
+                        <div class="product-rating-within-product-img">4.5 <i class="fa-solid fa-star"></i> |271 </div>
+                        <div class="product-img">
+                            <img
+                                src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/20756650/2022/11/24/fe69100f-50ce-41e2-87b3-2f9f39753dae1669270061014-MCaffeine-Coffee-Body-Scrub-200gm-1841669270060302-1.jpg" />
+                        </div>
+                        <div class="wishList"> Wishlist <i class="fa-regular fa-heart"></i></div>
+                        <strong>MCaffeine</strong>
+                        <p>Coffee Body Scrub with Berries</p>
+                        <strong>Rs.399</strong><del>Rs.499</del><span class="orange">(11% OFF)</span>
+                    </div>
+                    <!-- eighteenth product  -->
+                    <div class="product-showing-div-slide">
+                        <div class="product-rating-within-product-img">4.8 <i class="fa-solid fa-star"></i> |28 </div>
+                        <div class="product-img">
+                            <img
+                                src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/18938140/2022/7/6/3f5ac88b-2420-464f-9317-0332e238910b1657092623273BathBodyWorksTurquoiseWatersGentleGelHandSoapwithNaturalEsse1.jpg" />
+                        </div>
+                        <div class="wishList"> Wishlist <i class="fa-regular fa-heart"></i></div>
+                        <strong>Bath & Body Works</strong>
+                        <p>Orange + Ginger Body Scrub</p>
+                        <strong>Rs.1999</strong><del>Rs.2399</del><span class="orange">(Rs.400 OFF)</span>
+                    </div>
+                    <!-- ninteenth product  -->
+                    <div class="product-showing-div-slide">
+                        <div class="product-rating-within-product-img">4.5 <i class="fa-solid fa-star"></i> |987 </div>
+                        <div class="product-img">
+                            <img
+                                src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/1695266/2022/12/12/7e8e16d0-4807-4103-9ea6-3057c8dda3d81670835422624-THE-BODY-SHOP-Strawberry-Body-Polish-Sustainable-Body-Scrub--1.jpg" />
+                        </div>
+                        <div class="wishList"> Wishlist <i class="fa-regular fa-heart"></i></div>
+                        <strong>THE BODY SHOP</strong>
+                        <p>Strawberry Sustainable Body..</p>
+                        <strong>Rs.746</strong><del>Rs.995</del><span class="orange">(25% OFF)</span>
+                    </div>
+                    <!-- twentieth product  -->
+                    <div class="product-showing-div-slide">
+                        <div class="product-rating-within-product-img">4.6 <i class="fa-solid fa-star"></i> |41
+                        </div>
+                        <div class="product-img">
+                            <img
+                                src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/21759292/2023/3/21/e06ac01b-5182-4da7-a7aa-1a8bc7ad4d491679399902892-FIND-YOUR-HAPPY-PLACE-Sunkissed-Ocean-Waves-Exfoliating-Body-1.jpg" />
+                        </div>
+                        <div class="wishList"> Wishlist <i class="fa-regular fa-heart"></i></div>
+                        <strong>FIND YOUR HAPPY PLACE</strong>
+                        <p>Sunkissed Ocean Waves Scrub</p>
+                        <strong>Rs.454</strong><del>Rs.699</del><span class="orange">(35% OFF)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<!-- <script>
+    document.addEventListener('DOMContentLoaded', onload)
+
+
+    function onload() {
+        let productDivs = document.querySelectorAll('.product-showing-div-slide');
+
+        productDivs.forEach((productDiv) => {
+            let rating = productDiv.querySelector('.product-rating-within-product-img');
+            let image = productDiv.querySelector('.product-img');
+            let wishList = productDiv.querySelector('.wishList');
+
+            // event listeners
+            productDiv.addEventListener('mouseover', showWishlist);
+            productDiv.addEventListener('mouseout', hideWishlist);
+
+            function showWishlist() {
+                image.style.height = '280px';
+                if (rating) {
+                    rating.style.display = 'none';
+                }
+                wishList.style.display = 'block';
+            }
+
+            function hideWishlist() {
+                image.style.height = '310px';
+                if (rating) {
+                    rating.style.display = 'flex';
+                }
+                wishList.style.display = 'none';
+            }
+        });
+    };
+</script> -->
+
+
+</html>

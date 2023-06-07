@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://kit.fontawesome.com/8624324425.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #screen {
+            /* border: 1px solid black; */
+            width: 100%;
+        }
+
+        #navBar {
+            height: 100px;
+            width: 100%;
+            /* border: 1px solid black; */
+            display: flex;
+            justify-content: space-around;
+            background-color: #ffffff;
+            position: fixed;
+            top: 0;
+            z-index: 1;
+        }
+
+        #leftInnerDiv {
+            height: 100px;
+            width: 50%;
+            /* border: 1px solid black; */
+            display: flex;
+            align-items: center;
+        }
+
+        #logo {
+            height: 80px;
+            width: 15%;
+            /* border: 1px solid black; */
+            padding: 10px;
+            display: flex;
+            align-items: center;
+
+        }
+
+        #logo>a>img {
+            height: 100%;
+            width: 100%;
+            padding: 5px;
+            /* border: 1px solid black; */
+
+        }
+
+        #cat {
+            height: 80px;
+            width: 80%;
+            /* border: 1px solid black; */
+            padding: 10px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-around;
+            flex-flow: row wrap;
+            align-items: stretch;
+        }
+
+        .catList {
+            height: 60px;
+            width: 80px;
+            /* border: 1px solid black; */
+            padding: 5px;
+            font-size: small;
+            display: flex;
+            justify-content: space-around;
+            flex-flow: row wrap;
+            align-items: center;
+            
+
+        }
+
+        .catList>a {
+            text-decoration: none;
+            color: black;
+        }
+
+        #rightInnerDiv {
+            height: 100px;
+            width: 55%;
+            /* border: 1px solid black; */
+            display: flex;
+            align-items: center;
+        }
+
+        #rightInput {
+            height: 60px;
+            width: 60%;
+            /* border: 1px solid black; */
+            padding: 5px;
+            display: flex;
+            justify-content: space-around;
+            flex-flow: row wrap;
+            align-items: center;
+        }
+
+        #rightInput>div {
+            height: 20px;
+            width: 100%;
+            /* border: 1px solid black; */
+            background-color: #f5f5f6;
+            padding: 5px;
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+
+        }
+
+        #rightInput>div>input {
+            width: 90%;
+            border: none;
+            background-color: #f5f5f6;
+        }
+
+
+        #rightIcon {
+            height: 60px;
+            width: 35%;
+            /* border: 1px solid black; */
+            padding: 5px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        #rightIcon>div:nth-child(1)>p:nth-child(2)>a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .icon {
+            height: 60px;
+            width: 25%;
+            /* border: 1px solid black; */
+            padding: 5px;
+            text-align: center;
+        }
+
+        .icon>i {
+            margin-top: 10px;
+        }
+
+        #rightIcon>div:nth-child(3)>p:nth-child(2)>a {
+            text-decoration: none;
+            color: black;
+        }
+
+        #body {
+            /* border: 1px solid black; */
+            /* height: 400vh; */
+            width: 100%;
+            margin-top: 91px;
+        }
+
+        #filter-header {
+            /* border: 1px solid black; */
+            width: 100%;
+            margin-top: 8%;
+        }
+
+        #filter-header>p {
+            margin-top: 2%;
+        }
+
+        #inner-filter {
+            height: 40px;
+            /* border: 1px solid black; */
+            display: flex;
+            align-items: center;
+        }
+
+        #select-div {
+            /* border: 1px solid black; */
+            display: flex;
+            justify-content: space-between;
+            width: 20%;
+            margin-left: 16%;
+            align-items: center;
+        }
+
+        #select-div>select {
+            height: 30px;
+            display: inline;
+            border-radius: 10px;
+            border: none;
+        }
+
+        #select-div>select:hover {
+            border-radius: 10px;
+            border: 1px solid rgb(231, 229, 229);
+            background-color: rgb(231, 229, 229);
+        }
+
+        #sort {
+            border: 1px solid black;
+            height: 30px;
+            width: 20%;
+            display: flex;
+            margin-left: auto;
+            margin-right: 0;
+            align-items: center;
+        }
+
+        #sort>select {
+            height: 15px;
+            margin-left: 10px;
+            border: none;
+            outline: none;
+        }
+
+        #inner-body-align {
+            /* border: 1px solid black; */
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        #inner-body-align-for-left {
+            border: 1px solid rgb(227, 226, 226);
+            width: 16%;
+
+        }
+
+        #inner-body-align-for-left>div:nth-child(1)>h4:nth-child(1) {
+            height: 40px;
+            /* border: 1px solid black; */
+            display: flex;
+            align-items: center;
+
+        }
+
+        #inner-body-align-for-left>div:nth-child(1)>input:nth-child(5),
+        label:nth-child(6) {
+            margin-bottom: 25px;
+        }
+
+        #inner-body-align-for-left>div:nth-child(2)>input,
+        label {
+            margin-top: 1%;
+        }
+
+        #inner-body-align-for-left>div:nth-child(2)>input:nth-child(24),
+        label:nth-child(25) {
+            margin-bottom: 25px;
+        }
+
+        #inner-body-align-for-left>div:nth-child(2)>p:nth-child(26) {
+            color: red;
+        }
+
+        #search-catalog {
+            /* border: 1px solid black; */
+            display: flex;
+            align-items: center;
+            height: 40px;
+        }
+
+        #search-catalog>i {
+            margin-left: auto;
+            margin-right: 5%;
+        }
+
+        #inner-body-align-for-left>div:nth-child(3)>input:nth-child(2),
+        label:nth-child(3) {
+            margin-top: 15px;
+        }
+
+        #inner-body-align-for-left>div:nth-child(3)>p:last-child {
+            color: red;
+        }
+
+        .color-showing-span {
+            /* border: 1px solid black; */
+            display: inline-block;
+            height: 10px;
+            width: 10px;
+            border-radius: 50%;
+
+        }
+
+        #inner-body-align-for-left>div:nth-child(1)>input,
+        label {
+            margin-top: 2%;
+        }
+
+        #inner-body-align-for-left>div:nth-child(5)>div:nth-child(1) {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        #inner-body-align-for-left>div:nth-child(5)>p:nth-child(30) {
+            color: red;
+            margin-left: 15%;
+        }
+
+        #inner-body-align-for-left>div:nth-child(5)>span {
+            display: inline-block;
+            /* border: 1px solid black; */
+            border-radius: 50%;
+        }
+
+        #inner-body-align-for-right {
+            /* border: 1px solid black; */
+            width: 82%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-left: 2%;
+            margin-right: auto;
+        }
+
+        .product-showing-div-slide {
+            /* border: 1px solid black; */
+            height: 400px;
+            width: 18%;
+            margin-top: 2%;
+        }
+
+
+        .product-showing-div-slide>strong,
+        p {
+
+            margin-left: 10px;
+            line-height: 2px;
+        }
+
+        .product-showing-div-slide>span:nth-child(7) {
+            color: orange;
+        }
+
+        .product-showing-div-slide>del:nth-child(6) {
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+
+        .product-img {
+            /* border: 1px solid black; */
+            height: 310px;
+            width: 100%;
+
+        }
+
+        .orange {
+            color: orange;
+            margin-left: 5px;
+        }
+
+        .product-rating-within-product-img {
+            /* border: 1px solid black; */
+            height: 30px;
+            width: auto;
+            background-color: white;
+            position: absolute;
+            margin-top: 18%;
+            margin-left: 0.5%;
+            display: flex;
+            align-items: center;
+
+        }
+
+
+        .product-rating-within-product-img>i {
+            font-size: 9px;
+            margin-left: 2%;
+            color: green;
+
+        }
+
+        .product-img>img {
+            height: 100%;
+            width: 100%;
+        }
+
+        .product-showing-div-slide>strong:nth-child(4)>del {
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+
+        .product-showing-div-slide:hover {
+            transform: scale(1.1);
+        }
+
+        .wishList {
+            border: 1px solid rgb(84, 168, 84);
+            background-color: rgb(84, 168, 84);
+            color: white;
+            border-radius: 10px;
+            height: 25px;
+            width: 80%;
+            margin: auto;
+            text-align: center;
+            margin-top: 3px;
+            display: none;
+            align-items: center;
+            padding-top: 1%;
+        }
+
+        .wishList>a {
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="screen">
+        <div id="navBar">
+            <div id="leftInnerDiv">
+                <div id="logo">
+                    <a href="day-16-assignment.html">
+                        <img src="https://images.indianexpress.com/2021/01/myntra.png"></img>
+                    </a>
+                </div>
+                <div id="cat">
+                    <div class="catList"><a href="day-17-assignment- myntra-body.html">MEN</a></div>
+                    <div class="catList"><a href="day-23-assignment-myntra-body-women.html">WOMEN</a></div>
+                    <div class="catList"><a href="day-23-assignment-myntra-body-kids.html">KIDS</a></div>
+                    <div class="catList">HOME & LIVING</div>
+                    <div class="catList"><a href="day-23-assignment-myntra-body-beauty.html">BEAUTY</a></div>
+                    <div class="catList">STUDIO<sub>NEW</sub></div>
+                </div>
+            </div>
+            <div id="rightInnerDiv">
+                <div id="rightInput">
+                    <div><i class="fa-solid fa-magnifying-glass"></i><input
+                            placeholder="Search for product, brands and more" /></div>
+                </div>
+                <div id="rightIcon">
+                    <div class="icon">
+                        <i class="fa-regular fa-user"></i>
+                        <p><a href="day-18-assign-myntra-profile.html">Profile</a></p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa-regular fa-heart"></i>
+                        <p>Wishlist</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        <p><a href="day-18-assign-myntra-cart.html">Bag</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="body">
+            <div id="filter-header">
+                <p>Home / Clothing / <strong>Home Furnishing</strong></p>
+                <p><strong>Home Furnishing</strong>- 4818 items</p>
+                <div id="inner-filter">
+                    <strong>FILTERS</strong>
+                    <div id="select-div">
+                        <select>
+                            <option>Bundles</option>
+                        </select>
+                        <select>
+                            <option>Country of origin</option>
+                        </select>
+                        <select>
+                            <option>Size</option>
+                        </select>
+
+                    </div>
+                    <div id="sort">
+                        <p>Sort By:<strong>Recommended</strong></p>
+                        <select></select>
+                    </div>
+                </div>
+            </div>
+            <div id="inner-body-align">
+                <!-- for left side  -->
+                <div id="inner-body-align-for-left">
+                    <!-- first division left side  -->
+                    <div>
+                        <input type="checkbox" />
+                        <label><b>Men</b></label><br />
+                        <input type="checkbox" />
+                        <label><b>Women</b></label><br />
+                        <input type="checkbox" />
+                        <label><b>Boys</b></label><br />
+                        <input type="checkbox" />
+                        <label><b>Girls</b></label><br />
+                    </div>
+                    <!-- second division left side  -->
+                    <div>
+                        <h4>CATEGORIES</h4>
+                        <input type="checkbox" />
+                        <label>Bedsheets (24550)</label><br />
+                        <input type="checkbox" />
+                        <label>Wall Art (20520)</label><br />
+                        <input type="checkbox" />
+                        <label>Cushion Covers (15176)</label><br />
+                        <input type="checkbox" />
+                        <label>Curtains and Sheers (12295)</label><br />
+                        <input type="checkbox" />
+                        <label>Table Lamps (5608)</label><br />
+                        <input type="checkbox" />
+                        <label>Organisers (5357)</label><br />
+                        <input type="checkbox" />
+                        <label>Blankets Quilts and Do..(5..)</label><br />
+                        <input type="checkbox" />
+                        <label>Showpieces (4801)</label><br />
+                        <p>+ 120 More</p>
+                    </div>
+                    <!-- third division left side  -->
+                    <div>
+                        <div id="search-catalog">
+                            <h4>BRAND</h4>
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </div>
+                        <input type="checkbox" />
+                        <label>Kuber Industries (475)</label><br />
+                        <input type="checkbox" />
+                        <label>fancy mart (403)</label><br />
+                        <input type="checkbox" />
+                        <label>Fourwalls (377)</label><br />
+                        <input type="checkbox" />
+                        <label>Wonderland (326)</label><br />
+                        <input type="checkbox" />
+                        <label>TAYHAA (251)</label><br />
+                        <input type="checkbox" />
+                        <label>Nestasia (240)</label><br />
+                        <input type="checkbox" />
+                        <label>BS AMOR (199)</label><br />
+                        <input type="checkbox" />
+                        <label>Home Center (189)</label><br />
+                        <p>+ 74 more</p>
+                    </div>
+                    <!-- fourth division left side  -->
+                    <div>
+                        <h4>PRICE</h4>
+                        <input type="checkbox" />
+                        <label>Rs. 139 to Rs. 3104 (4602)</label><br />
+                        <input type="checkbox" />
+                        <label>Rs. 3104 to Rs. 6069 (195)</label><br />
+                        <input type="checkbox" />
+                        <label>Rs. 6069 to Rs. 9034 (16)</label><br />
+                        <input type="checkbox" />
+                        <label>Rs. 9034 to Rs. 11999 (4)</label><br />
+                    </div>
+                    <!-- fifth division left side  -->
+                    <div>
+                        <div id="search-catalog">
+                            <h4>COLOR</h4>
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </div>
+                        <input type="checkbox" />
+                        <span class="color-showing-span" style="background-color:Green;"></span>
+                        <label>Green (932)</label><br />
+                        <input type="checkbox" />
+                        <span class="color-showing-span" style="border:1px solid black;background-color:white;"></span>
+                        <label>White (756)</label><br />
+                        <input type="checkbox" />
+                        <span class="color-showing-span" style="background-color:yellow;"></span>
+                        <label>yellow (400)</label><br />
+                        <input type="checkbox" />
+                        <span class="color-showing-span" style="background-color:red;"></span>
+                        <label>Red (378)</label><br />
+                        <input type="checkbox" />
+                        <span class="color-showing-span" style="background-color:pink;"></span>
+                        <label>Pink (345)</label><br />
+                        <input type="checkbox" />
+                        <span class="color-showing-span" style="background-color:Blue;"></span>
+                        <label>Blue (332)</label><br />
+                        <input type="checkbox" />
+                        <span class="color-showing-span" style="background-color:Black;"></span>
+                        <label>Black (246)</label><br />
+                        <p>+ 32 more</p>
+                    </div>
+                </div>
+                <div id="inner-body-align-for-right">
+                    <!-- first product  -->
+                    <div class="product-showing-div-slide">
+                        <div class="product-rating-within-product-img">4.4 <i class="fa-solid fa-star"></i> |394 </div>
+                        <div class="product-img">
+                            <img
+                                src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/15292382/2021/8/28/0147767f-9631-426f-a56f-64d253b14ef61630140611270Planters1.jpg" />
+                        </div>
+                        <div class="wishList"> Wishlist <i class="fa-regular fa-heart"></i></div>
+                        <strong>Homesake</strong>
+                        <p>Set Of 2 Plant Hanges</p>
+                        <strong>Rs.375</strong><del>Rs.2000</del><span class="orange">(Rs.1625 OFF)</span>
+                    </div>
+                    <!-- second product  -->
+                    <div class="product-showing-div-slide">
+                        <!-- <div class="product-rating-within-product-img">4.5 <i class="fa-solid fa-star"></i> |27 </div> -->
+                        <div class="product-img">
+                            <img
+                                src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/19921212/2022/9/13/06653fe6-ede4-4811-b5e5-77da53288dfd1663068818354Planters1.jpg" />
+                        </div>
+                        <div class="wishList"> Wishlist <i class="fa-regular fa-heart"></i></div>
+                        <strong>VarEesha</strong>
+                        <p>Set of Striped Planters</p>
+                        <strong>Rs.799</strong><del>Rs.1599</del><span class="orange">(50%OFF)</span>
+                    </div>
+                    <!-- third product  -->
+                    <div class="product-showing-div-slide">
+                        <div class="product-rating-within-product-img">3.9 <i class="fa-solid fa-star"></i> |58
+                        </div>
+                        <div class="product-img">
+                            <img
+                                src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17282336/2022/2/24/e2b7e30a-4853-4858-8c62-e0c4ea489be01645697218072ArtificialFlowersandPlants1.jpg" />
+                        </div>
+                        <div class="wishList"> Wishlist <i class="fa-regular fa-heart"></i></div>
+                        <strong>Marks & Spencer</strong>
+                        <p>Artificial Plants With Pot</p>
+                        <strong>Rs.449</strong><del>Rs.599</del><span class="orange">(25%OFF)</span>
+                    </div>
+                    <!-- fourth product  -->
+                    <div class="product-showing-div-slide">
+                        <!-- <div class="product-rating-within-product-img">4.9 <i class="fa-solid fa-star"></i> |10 </div> -->
+                        <div class="product-img">
+                            <img
+                                src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/22359372/2023/3/16/69722b99-c9f7-4356-b84c-823f33f97d781678958951893MetalPlanters1.jpg" />
+                        </div>
+                        <div class="wishList"><a href="day-13-assignment-roadster-tshrist.html">Wishlist </a><i
+                                class="fa-regular fa-heart"></i></div>
+                        <strong>The Art House</strong>
+                        <p>Metal Planter Stand</p>
+                        <strong>Rs.5249</strong><del>Rs.17499</del><span class="orange">(70%OFF)</span>
+                    </div>
+                    <!-- fifth product  -->
+                    <div class="product-showing-div-slide">
+                        <div class="product-rating-within-product-img">4 <i class="fa-solid fa-star"></i> |14
+                        </div>
+                        <div class="product-img">
+                            <img
+                                src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/21730262/2023/2/9/2df95f05-0c20-4544-bd70-68d2da4b727c1675921224797-TIED-RIBBONS-Green--Black-Monstera-Deliciosa-Artificial-Plan-1.jpg" />
+                        </div>
+                        <div class="wishList"> Wishlist <i class="fa-regular fa-heart"></i></div>
+                        <strong>TIED RIBBONS</strong>
+                        <p>Monstera Plant With Pot</p>
+                        <strong>Rs.1270</strong><del>Rs.3629</del><span class="orange">(65%OFF)</span>
+                    </div>
+                    <!-- sixth product  -->
+                    <div class="product-showing-div-slide">
+                        <div class="product-rating-within-product-img">4.2 <i class="fa-solid fa-star"></i> |5 </div>
+                        <div class="product-img">
+                            <img
+                                src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/16918622/2023/6/1/22bf7c82-90e1-4eca-a810-b169a37a6c571685602490268-Athome-by-Nilkamal-Yellow-Bunch-Lemon-Flower-857168560249022-7.jpg" />
+                        </div>
+                        <div class="wishList"> Wishlist <i class="fa-regular fa-heart"></i></div>
+                        <strong>Athome by Nilkamal</strong>
+                        <p>Bunch Lemon Flower</p>
+                        <strong>Rs.299</strong><del>Rs.499</del><span class="orange">(Rs.40% OFF)</span>
+                    </div>
+                    <!-- seventh product  -->
+                    <div class="product-showing-div-slide">
+                        <div class="product-rating-within-product-img">4.2 <i class="fa-solid fa-star"></i> |504 </div>
+                        <div class="product-img">
+                            <img
+                                src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2021/2/11/35bf3b3c-c027-4ab5-8c91-e56d8440faf91613044698039-1.jpg" />
+                        </div>
+                        <div class="wishList"> Wishlist <i class="fa-regular fa-heart"></i></div>
+                        <strong>fancy mart</strong>
+                        <p>Artificial Bamboo Leaves In Ap..</p>
+                        <strong>Rs. 555</strong><del>Rs.910</del><span class="orange">(39% OFF)</span>
+                    </div>
+                    <!-- eighth product  -->
+                    <div class="product-showing-div-slide">
+                        <div class="product-rating-within-product-img">4.5 <i class="fa-solid fa-star"></i> |30
+                        </div>
+                        <div class="product-img">
+                            <img
+                                src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17282328/2022/2/24/0ff68e23-5983-433a-acef-776aecdf0e9b1645701512837ArtificialFlowersandPlants1.jpg" />
+                        </div>
+                        <div class="wishList"> Wishlist <i class="fa-regular fa-heart"></i></div>
+                        <strong>Mark & Spencer</strong>
+                        <p>Artificial Plant with Pot</p>
+                        <strong>Rs.449</strong><del>Rs.599</del><span class="orange">(25%OFF)</span>
+                    </div>
+                    <!-- ninth product  -->
+                    <div class="product-showing-div-slide">
+                        <div class="product-rating-within-product-img">4.9 <i class="fa-solid fa-star"></i> |7 </div>
+                        <div class="product-img">
+                            <img
+                                src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/22896654/2023/4/25/bf7a39a4-1954-4495-aa2d-e500444dac181682437418066ArtificialFlowersandPlants1.jpg" />
+                        </div>
+                        <div class="wishList"> Wishlist <i class="fa-regular fa-heart"></i></div>
+                        <strong>Pure Home and Living</strong>
+                        <p>Viola Potted Artificial Flower</p>
+                        <strong>Rs.520</strong><del>Rs.650</del><span class="orange">(20% OFF)</span>
+                    </div>
+                    <!-- tenth product  -->
+                    <div class="product-showing-div-slide">
+                        <div class="product-rating-within-product-img">4.6 <i class="fa-solid fa-star"></i> |18 </div>
+                        <div class="product-img">
+                            <img
+                                src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/18821988/2023/6/5/0402c0e1-bf7a-4d1e-a713-bf69718b45ae1685940150202-TIED-RIBBONS-Set-Of-5-Artificial-Gypsophilia-Flower-Bunches--1.jpg" />
+                        </div>
+                        <div class="wishList"> Wishlist <i class="fa-regular fa-heart"></i></div>
+                        <strong>TIED RIBBONS</strong>
+                        <p>Set Of 5 Artificial Gypsophilia..</p>
+                        <strong>Rs.551</strong><del>Rs.1623</del><span class="orange">(66% OFF)</span>
+                    </div>
+                    <!-- eleventh product  -->
+                    <div class="product-showing-div-slide">
+                        <!-- <div class="product-rating-within-product-img">4.3 <i class="fa-solid fa-star"></i> |638 </div> -->
+                        <div class="product-img">
+                            <img
+                                src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/19939104/2022/9/14/220a8e2b-d221-4f85-b69b-99d8361dee9c1663136518008Setof2GoldenPlanterswithStand1.jpg" />
+                        </div>
+                        <div class="wishList"> Wishlist <i class="fa-regular fa-heart"></i></div>
+                        <strong>Aapno Rajasthan</strong>
+                        <p>Set Of 2 Solid Metal Planters w..</p>
+                        <strong>Rs.5060</strong><del>Rs.23000</del><span class="orange">(78% OFF)</span>
+                    </div>
+                    <!-- tweleve product  -->
+                    <div class="product-showing-div-slide">
+                        <div class="product-rating-within-product-img">4.5 <i class="fa-solid fa-star"></i> |104 </div>
+                        <div class="product-img">
+                            <img
+                                src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17989868/2022/4/22/66af65bb-5556-4fb9-be57-704a3fff25d916506252147402TierPineWoodMacrameWallHangingShelfWovenHomeDecorFloatingSt1.jpg" />
+                        </div>
+                        <div class="wishList"> Wishlist <i class="fa-regular fa-heart"></i></div>
+                        <strong>Homesake</strong>
+                        <p>2 Tier Wall Hanging Planters</p>
+                        <strong>Rs.450</strong><del>Rs.2500</del><span class="orange">(Rs.2050 OFF)</span>
+                    </div>
+                    <!-- thirteenth product  -->
+                    <div class="product-showing-div-slide">
+                        <!-- <div class="product-rating-within-product-img">4.7 <i class="fa-solid fa-star"></i> |166 </div> -->
+                        <div class="product-img">
+                            <img
+                                src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/22817158/2023/4/19/e6c7a910-42b3-4fa2-bbfb-2da875aa3d5b1681877303030ArtificialFlowersandPlants1.jpg" />
+                        </div>
+                        <div class="wishList"> Wishlist <i class="fa-regular fa-heart"></i></div>
+                        <strong>Art Street</strong>
+                        <p>Artificial Silk Flowers</p>
+                        <strong>Rs.230</strong><del>Rs.1000</del><span class="orange">(77% OFF)</span>
+                    </div>
+                    <!-- fourteenth product  -->
+                    <div class="product-showing-div-slide">
+                        <div class="product-rating-within-product-img">4.2 <i class="fa-solid fa-star"></i> |32
+                        </div>
+                        <div class="product-img">
+                            <img
+                                src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17282330/2022/2/24/f3c4612e-b04d-4159-9b3d-e2f0068eec821645699799025ArtificialFlowersandPlants1.jpg" />
+                        </div>
+                        <div class="wishList"> Wishlist <i class="fa-regular fa-heart"></i></div>
+                        <strong>Marks & Spencer</strong>
+                        <p>Artificial Plant With Pot</p>
+                        <strong>Rs.449</strong><del>Rs.599</del><span class="orange">(25% OFF)</span>
+                    </div>
+                    <!-- fifteenth product  -->
+                    <div class="product-showing-div-slide">
+                        <!-- <div class="product-rating-within-product-img">4.3 <i class="fa-solid fa-star"></i> |642 </div> -->
+                        <div class="product-img">
+                            <img
+                                src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/21762184/2023/1/30/7c1c3697-7703-4126-b071-02c2ece0b5e11675086190085Planters1.jpg" />
+                        </div>
+                        <div class="wishList"> Wishlist <i class="fa-regular fa-heart"></i></div>
+                        <strong>Marks & Spencer</strong>
+                        <p>Ceramic Planter With Stand</p>
+                        <strong>Rs.1499</strong><del>Rs.1999</del><span class="orange">(25% OFF)</span>
+                    </div>
+                    <!-- sixteenth product  -->
+                    <div class="product-showing-div-slide">
+                        <!-- <div class="product-rating-within-product-img">4.4 <i class="fa-solid fa-star"></i> |12.7k -->
+                        <!-- </div> -->
+                        <div class="product-img">
+                            <img
+                                src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/21923602/2023/2/10/651d36d4-dc9a-4d92-983a-471f99b553931676025524156ArtificialFlowersandPlants1.jpg" />
+                        </div>
+                        <div class="wishList"> Wishlist <i class="fa-regular fa-heart"></i></div>
+                        <strong>Pure Home and Living</strong>
+                        <p>Boat Orchid Artificial Flowers</p>
+                        <strong>Rs.879</strong><del>Rs.1099</del><span class="orange">(20% OFF)</span>
+                    </div>
+                    <!-- seventeenth product  -->
+                    <div class="product-showing-div-slide">
+                        <div class="product-rating-within-product-img">4 <i class="fa-solid fa-star"></i> |38 </div>
+                        <div class="product-img">
+                            <img
+                                src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/21730254/2023/1/27/a878f601-b0ce-4957-af7e-363d0228da381674831114999ArtificialFlowersandPlants1.jpg" />
+                        </div>
+                        <div class="wishList"> Wishlist <i class="fa-regular fa-heart"></i></div>
+                        <strong>TIED RIBBONS</strong>
+                        <p>4 Pcs Artificial Pampas Grass</p>
+                        <strong>Rs.594</strong><del>Rs.1749</del><span class="orange">(66% OFF)</span>
+                    </div>
+                    <!-- eighteenth product  -->
+                    <div class="product-showing-div-slide">
+                        <div class="product-rating-within-product-img">4.2 <i class="fa-solid fa-star"></i> |17 </div>
+                        <div class="product-img">
+                            <img
+                                src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2019/11/12/2ce9ff7f-9e35-402f-a73b-e1d645bcd2bc1573553535499-1.jpg" />
+                        </div>
+                        <div class="wishList"> Wishlist <i class="fa-regular fa-heart"></i></div>
+                        <strong>green girgit</strong>
+                        <p>Set of 4 Handpainted rect..</p>
+                        <strong>Rs.1760</strong><del>Rs.4000</del><span class="orange">(56% OFF)</span>
+                    </div>
+                    <!-- ninteenth product  -->
+                    <div class="product-showing-div-slide">
+                        <!-- <div class="product-rating-within-product-img">4.3 <i class="fa-solid fa-star"></i> |7.5K </div> -->
+                        <div class="product-img">
+                            <img
+                                src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/22730070/2023/4/11/6976bc52-a42c-4e50-a25c-44d1858417631681207371952CorsicaEden3-PetalDecorativeFlowersinGlassVase1.jpg" />
+                        </div>
+                        <div class="wishList"> Wishlist <i class="fa-regular fa-heart"></i></div>
+                        <strong>Home Centre</strong>
+                        <p>Flower In Glass Vase</p>
+                        <strong>Rs.699</strong><del>Rs.999</del><span class="orange">(30% OFF)</span>
+                    </div>
+                    <!-- twentieth product  -->
+                    <div class="product-showing-div-slide">
+                        <div class="product-rating-within-product-img">4.4 <i class="fa-solid fa-star"></i> |5
+                        </div>
+                        <div class="product-img">
+                            <img
+                                src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/20202846/2022/9/28/35dc3e39-1415-4d25-a671-f20c11788ec61664374209418NestasiaTexturedArtificialPlantwithPot1.jpg" />
+                        </div>
+                        <div class="wishList"> Wishlist <i class="fa-regular fa-heart"></i></div>
+                        <strong>Nestasia</strong>
+                        <p>Textured Artificial Plant with Pot</p>
+                        <strong>Rs.270</strong><del>Rs.420</del><span class="orange">(Rs.150 OFF)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', onload)
+
+
+    function onload() {
+        let productDivs = document.querySelectorAll('.product-showing-div-slide');
+
+        productDivs.forEach((productDiv) => {
+            let rating = productDiv.querySelector('.product-rating-within-product-img');
+            let image = productDiv.querySelector('.product-img');
+            let wishList = productDiv.querySelector('.wishList');
+
+            // event listeners
+            productDiv.addEventListener('mouseover', showWishlist);
+            productDiv.addEventListener('mouseout', hideWishlist);
+
+            function showWishlist() {
+                image.style.height = '280px';
+                if (rating) {
+                    rating.style.display = 'none';
+                }
+                wishList.style.display = 'block';
+            }
+
+            function hideWishlist() {
+                image.style.height = '310px';
+                if (rating) {
+                    rating.style.display = 'flex';
+                }
+                wishList.style.display = 'none';
+            }
+        });
+    };
+</script>
+
+
+</html>
