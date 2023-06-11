@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Myntra-homeNLiving</title>
     <style>
         #screen {
             /* border: 1px solid black; */
@@ -68,13 +68,16 @@
             width: 80px;
             /* border: 1px solid black; */
             padding: 5px;
-            font-size: small;
+            font-size: 9px;
             display: flex;
             justify-content: space-around;
             flex-flow: row wrap;
             align-items: center;
-            
-
+        }
+        .catList>sup{
+            margin-top: -10px;
+            margin-left: -15px;
+            color: red;
         }
 
         .catList>a {
@@ -139,15 +142,18 @@
             height: 60px;
             width: 25%;
             /* border: 1px solid black; */
-            padding: 5px;
+            /* padding: 5px; */
             text-align: center;
+            font-size: 14px;
         }
 
-        .icon>i {
+        .icon>a>i {
             margin-top: 10px;
+            text-decoration: none;
+            color: black;
         }
 
-        #rightIcon>div:nth-child(3)>p:nth-child(2)>a {
+        #rightIcon>div>p>a {
             text-decoration: none;
             color: black;
         }
@@ -424,7 +430,7 @@
                     <div class="catList"><a href="day-23-assignment-myntra-body-kids.html">KIDS</a></div>
                     <div class="catList">HOME & LIVING</div>
                     <div class="catList"><a href="day-23-assignment-myntra-body-beauty.html">BEAUTY</a></div>
-                    <div class="catList">STUDIO<sub>NEW</sub></div>
+                    <div class="catList">STUDIO<sup>NEW</sup></div>
                 </div>
             </div>
             <div id="rightInnerDiv">
@@ -434,15 +440,15 @@
                 </div>
                 <div id="rightIcon">
                     <div class="icon">
-                        <i class="fa-regular fa-user"></i>
+                        <a href="day-18-assign-myntra-profile.html"><i class="fa-regular fa-user"></i></a>
                         <p><a href="day-18-assign-myntra-profile.html">Profile</a></p>
                     </div>
                     <div class="icon">
-                        <i class="fa-regular fa-heart"></i>
-                        <p>Wishlist</p>
+                        <a href="day-25-wishList.html"><i class="fa-regular fa-heart"></i></a>
+                        <p><a href="day-25-wishList.html">Wishlist</a></p>
                     </div>
                     <div class="icon">
-                        <i class="fa-solid fa-bag-shopping"></i>
+                        <a href="day-18-assign-myntra-cart.html"><i class="fa-solid fa-bag-shopping"></i></a>
                         <p><a href="day-18-assign-myntra-cart.html">Bag</a></p>
                     </div>
                 </div>

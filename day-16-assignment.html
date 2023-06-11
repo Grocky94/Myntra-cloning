@@ -65,7 +65,7 @@
             align-items: stretch;
         }
 
-        #cat>div:nth-child(1)>a {
+        #cat>div>a {
             text-decoration: none;
             color: black;
         }
@@ -75,13 +75,16 @@
             width: 80px;
             /* border: 1px solid black; */
             padding: 5px;
-            font-size: small;
+            font-size: 9px;
             display: flex;
             justify-content: space-around;
             flex-flow: row wrap;
             align-items: center;
-
-
+        }
+        .catList>sub{
+            margin-top: -10px;
+            margin-left: -15px;
+            color: red;
         }
 
         #rightInnerDiv {
@@ -145,8 +148,10 @@
             text-align: center;
         }
 
-        .icon>i {
+        .icon>a>i {
             margin-top: 10px;
+            text-decoration: none;
+            color: black;
         }
 
         .icon>p:nth-child(2)>a {
@@ -443,10 +448,10 @@
             </div>
             <div id="cat">
                 <div class="catList"><a href="day-17-assignment- myntra-body.html">MEN</a></div>
-                <div class="catList">WOMEN</div>
-                <div class="catList">KIDS</div>
-                <div class="catList">HOME & LIVING</div>
-                <div class="catList">BEAUTY</div>
+                <div class="catList"><a href="day-23-assignment-myntra-body-women.html">WOMEN</a></div>
+                <div class="catList"><a href="day-23-assignment-myntra-body-kids.html">KIDS</a></div>
+                <div class="catList"><a href="day-23-assignment-myntra-body-homeNLiving.html">HOME & LIVING</a></div>
+                <div class="catList"><a href="day-23-assignment-myntra-body-beauty.html">BEAUTY</a></div>
                 <div class="catList">STUDIO<sub>NEW</sub></div>
             </div>
         </div>
@@ -457,15 +462,15 @@
             </div>
             <div id="rightIcon">
                 <div class="icon">
-                    <i class="fa-regular fa-user"></i>
+                    <a href="day-18-assign-myntra-profile.html"><i class="fa-regular fa-user"></i></a>
                     <p><a href="day-18-assign-myntra-profile.html">Profile</a></p>
                 </div>
                 <div class="icon">
-                    <i class="fa-regular fa-heart"></i>
-                    <p>Wishlist</p>
+                    <a href="day-25-wishList.html"><i class="fa-regular fa-heart"></i></a>
+                    <p><a href="day-25-wishList.html">Wishlist</a></p>
                 </div>
                 <div class="icon">
-                    <i class="fa-solid fa-bag-shopping"></i>
+                    <a href="day-18-assign-myntra-cart.html"><i class="fa-solid fa-bag-shopping"></i></a>
                     <p><a href="day-18-assign-myntra-cart.html">Bag</a></p>
                 </div>
             </div>

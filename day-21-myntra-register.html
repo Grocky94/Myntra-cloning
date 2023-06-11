@@ -43,7 +43,7 @@
             align-items: center;
         }
 
-        #logo>img {
+        #logo>a>img {
             height: 100%;
             width: 100%;
             /* border: 1px solid black; */
@@ -62,11 +62,15 @@
             height: 60px;
             width: 16%;
             /* border: 1px solid black; */
-            font-size: small;
+            font-size: 9px;
             display: flex;
             margin-left: 0.5%;
             align-items: center;
             justify-content: center;
+        }
+        .catList>a{
+            text-decoration: none;
+            color: black;
         }
 
         #cat .catList sub {
@@ -135,12 +139,13 @@
             height: 60px;
             width: 25%;
             /* border: 1px solid black; */
-            padding: 5px;
+            /* padding: 5px; */
+            font-size: 14px;
             text-align: center;
         }
 
         .icon>i {
-            margin-top: 10px;
+            margin-top: 20%;
         }
 
         body {
@@ -214,14 +219,14 @@
         <div id="navBar">
             <div id="leftInnerDiv">
                 <div id="logo">
-                        <img src="https://images.indianexpress.com/2021/01/myntra.png"></img>
+                        <a href="d"><img src="https://images.indianexpress.com/2021/01/myntra.png"></img></a>
                 </div>
                 <div id="cat">
-                    <div class="catList">MEN</div>
-                    <div class="catList">WOMEN</div>
-                    <div class="catList">KIDS</div>
-                    <div class="catList">HOME & LIVING</div>
-                    <div class="catList">BEAUTY</div>
+                    <div class="catList"><a href="day-17-assignment- myntra-body.html">MEN</a></div>
+                    <div class="catList"><a href="day-23-assignment-myntra-body-women.html">WOMEN</a></div>
+                    <div class="catList"><a href="day-23-assignment-myntra-body-kids.html">KIDS</a></div>
+                    <div class="catList"><a href="day-23-assignment-myntra-body-homeNLiving.html">HOME & LIVING</a></div>
+                    <div class="catList"><a href="day-23-assignment-myntra-body-beauty.html">BEAUTY</a></div>
                     <div class="catList">STUDIO<sub>NEW</sub></div>
                 </div>
             </div>

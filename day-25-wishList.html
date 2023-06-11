@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://kit.fontawesome.com/8624324425.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Myntra-wishlist</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: Assistant, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        #navBar {
+            height: 100px;
+            width: 100%;
+            /* border: 1px solid black; */
+            display: flex;
+            justify-content: space-around;
+            background-color: #ffffff;
+            position: fixed;
+            top: 0;
+            z-index: 1;
+        }
+
+        #leftInnerDiv {
+            height: 100px;
+            width: 50%;
+            /* border: 1px solid black; */
+            display: flex;
+            align-items: center;
+        }
+
+        #logo {
+            height: 80px;
+            width: 15%;
+            /* border: 1px solid black; */
+            padding: 10px;
+            display: flex;
+            align-items: center;
+
+        }
+
+        #logo>a>img {
+            height: 100%;
+            width: 100%;
+            padding: 5px;
+            /* border: 1px solid black; */
+
+        }
+
+        #cat {
+            height: 80px;
+            width: 80%;
+            /* border: 1px solid black; */
+            padding: 10px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-around;
+            flex-flow: row wrap;
+            align-items: stretch;
+        }
+
+        #cat>div>a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .catList {
+            height: 60px;
+            width: 80px;
+            /* border: 1px solid black; */
+            padding: 5px;
+            font-size: small;
+            display: flex;
+            justify-content: space-around;
+            flex-flow: row wrap;
+            align-items: center;
+
+
+        }
+
+        #rightInnerDiv {
+            height: 100px;
+            width: 55%;
+            /* border: 1px solid black; */
+            display: flex;
+            align-items: center;
+        }
+
+        #rightInput {
+            height: 60px;
+            width: 60%;
+            /* border: 1px solid black; */
+            padding: 5px;
+            display: flex;
+            justify-content: space-around;
+            flex-flow: row wrap;
+            align-items: center;
+        }
+
+        #rightInput>div {
+            height: 20px;
+            width: 100%;
+            /* border: 1px solid black; */
+            background-color: #f5f5f6;
+            padding: 5px;
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+
+        }
+
+        #rightInput>div>input {
+            width: 90%;
+            border: none;
+            background-color: #f5f5f6;
+        }
+
+
+        #rightIcon {
+            height: 60px;
+            width: 35%;
+            /* border: 1px solid black; */
+            padding: 5px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        #rightIcon>div:nth-child(1)>p:nth-child(2)>a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .icon {
+            height: 60px;
+            width: 25%;
+            /* border: 1px solid black; */
+            padding: 5px;
+            text-align: center;
+        }
+
+        .icon>a>i {
+            margin-top: 10px;
+            text-decoration: none;
+            color: black;
+        }
+
+        #rightIcon>div:nth-child(3)>p:nth-child(2)>a {
+            text-decoration: none;
+            color: black;
+        }
+
+        #wishList-body {
+            width: 90%;
+            margin-left: 5%;
+            margin-bottom: 5%;
+            /* border: 1px solid black; */
+            display: flex;
+            flex-wrap: wrap;
+            /* justify-content: space-around; */
+        }
+        #wishList-heading {
+            margin-top: 8%; 
+            height:10vh;
+            width:90%;
+            margin-left:5%;
+            /* border:1px solid black; */
+            display: flex;
+            align-items: center;
+        }
+        #wishList-heading>p {
+            margin-left: 1%;
+        }
+
+        .product-div {
+            height: 52vh;
+            width: 15%;
+            border: 1px solid rgb(168, 168, 168);
+            line-height: 4vh;
+            text-align: center;
+            font-family: Assistant, -apple-system,
+                BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+            margin-top: 1%;
+            position: relative;
+            margin-left: 1%;
+            margin-right: auto;
+            margin-bottom: 1%;
+        }
+
+        .product-image {
+            height: 35vh;
+            width: 100%;
+            /* border: 1px solid black; */
+            position: relative;
+        }
+
+        .cross {
+            position: absolute;
+            right: 2%;
+            top: 2%;
+            height: 4vh;
+            width: 9%;
+            color: rgb(116, 112, 112);
+            border: 1px solid rgb(116, 112, 112);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            padding-left: 4%;
+        }
+
+        .product-image>img {
+            height: 100%;
+            width: 100%;
+        }
+
+        .product-div>p:nth-child(2) {
+            color: brown;
+        }
+
+        .product-div>p:nth-child(3) {
+            opacity: 0.6;
+        }
+
+        .product-div>p:nth-child(4)>del {
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+
+        .orange {
+            color: orange;
+        }
+
+        .similar {
+            height: 5vh;
+            width: 100%;
+            bottom: 0%;
+            border-top: 1px solid rgb(168, 168, 168);
+            /* margin-top: -5vh; */
+            display: flex;
+            align-items: center;
+            position: absolute;
+        }
+
+        .similar>p {
+            margin: auto;
+            color: red;
+        }
+
+       
+
+        #footer-parent-div {
+            /* border: 1px solid black; */
+            height: 500px;
+            width: 100%;
+        }
+
+        #inner-align-div {
+            /* border: 1px solid black; */
+            height: 500px;
+            width: 80%;
+            margin: auto;
+        }
+
+        #inside-of-inner-align-div {
+            /* border: 1px solid black; */
+            height: 500px;
+            width: 100%;
+            display: flex;
+        }
+
+        #Online-Useful {
+            /* border: 1px solid black; */
+            height: 500px;
+            width: 20%;
+        }
+
+        #shopping {
+            /* border: 1px solid black; */
+            height: 250px;
+            width: 100%;
+            line-height: 20px;
+        }
+
+        .anchor {
+            text-decoration: none;
+            color: black;
+            font-size: 12px;
+            margin-bottom: 5px;
+        }
+
+        .anchor-grey {
+            text-decoration: none;
+            color: grey;
+            font-size: 14px;
+
+        }
+
+        #cus-pro {
+            /* border: 1px solid black; */
+            height: 500px;
+            width: 20%;
+        }
+
+        #exp-mob {
+            /* border: 1px solid black; */
+            height: 500px;
+            width: 30%;
+        }
+
+        #play-image-div {
+            display: flex;
+        }
+
+        .play-img {
+            width: 120px;
+        }
+
+        .apple-app-img {
+            width: 110px;
+        }
+
+        #accredation {
+            /* border: 1px solid black; */
+            height: 500px;
+            width: 30%;
+        }
+
+        .fa-square-facebook,
+        .fa-twitter,
+        .fa-youtube,
+        .fa-instagram {
+            color: grey;
+        }
+
+        .fa-twitter,
+        .fa-youtube,
+        .fa-instagram {
+            margin-left: 10px;
+        }
+
+        #original {
+            /* border: 1px solid black; */
+            height: 60px;
+            width: 100%;
+            display: flex;
+            margin-top: 15px;
+        }
+
+        .accreddation-pic {
+            width: 50px;
+        }
+
+        .accreddation-text {
+            margin-left: 5px;
+            margin-top: 0px;
+        }
+
+        #popular-search {
+            /* border: 1px solid black; */
+            width: 80%;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navBar">
+        <div id="leftInnerDiv">
+            <div id="logo">
+                <a href="day-16-assignment.html">
+                    <img src="https://images.indianexpress.com/2021/01/myntra.png"></img>
+                </a>
+            </div>
+            <div id="cat">
+                <div class="catList"><a href="day-17-assignment- myntra-body.html">MEN</a></div>
+                <div class="catList"><a href="day-23-assignment-myntra-body-women.html">WOMEN</a></div>
+                <div class="catList"><a href="day-23-assignment-myntra-body-kids.html">KIDS</a></div>
+                <div class="catList"><a href="day-23-assignment-myntra-body-homeNLiving.html">HOME & LIVING</a></div>
+                <div class="catList"><a href="day-23-assignment-myntra-body-beauty.html">BEAUTY</a></div>
+                <div class="catList">STUDIO<sub>NEW</sub></div>
+            </div>
+        </div>
+        <div id="rightInnerDiv">
+            <div id="rightInput">
+                <div><i class="fa-solid fa-magnifying-glass"></i><input
+                        placeholder="Search for product, brands and more" /></div>
+            </div>
+            <div id="rightIcon">
+                <div class="icon">
+                    <a href="day-18-assign-myntra-profile.html"><i class="fa-regular fa-user"></i></a>
+                    <p><a href="day-18-assign-myntra-profile.html">Profile</a></p>
+                </div>
+                <div class="icon">
+                    <i class="fa-regular fa-heart"></i>
+                    <p>Wishlist</p>
+                </div>
+                <div class="icon">
+                    <a href="day-18-assign-myntra-cart.html"><i class="fa-solid fa-bag-shopping"></i></a>
+                    <p><a href="day-18-assign-myntra-cart.html">Bag</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="wishList-heading">
+        <p><b>My Wishlist</b> <span> - 8 items</span></p>
+    </div>
+    <div id="wishList-body">
+        <!-- product one  -->
+        <div class="product-div">
+            <div class="product-image">
+                <span class="cross">X</span>
+                <img
+                    src="https://assets.myntassets.com/w_200,c_limit,fl_progressive,dpr_2.0/assets/images/22463488/2023/3/22/2d0c8e24-b058-450a-8e19-f4f248e07f531679449104069RegularFitRound-neckT-shirt1.jpg" />
+            </div>
+            <p> OUT OF STOCK</p>
+            <p>H&M Men Regular Fit Round...</p>
+            <p><b>Rs.499</b></p>
+            <div class="similar">
+                <p>SHOW SIMILAR</p>
+            </div>
+        </div>
+        <!-- product second   -->
+        <div class="product-div">
+            <div class="product-image">
+                <span class="cross">X</span>
+                <img
+                    src="https://assets.myntassets.com/f_webp,w_200,c_limit,fl_progressive,dpr_2.0/assets/images/13710930/2021/9/17/c24e0604-d2e2-42db-a03a-a725b8ee3cf21631883671225RoadsterMenNavyBlueTypographyPrintedT-shirtTshirtsRoadsterMe4.jpg" />
+            </div>
+            <p></p>
+            <p>Roadster Women Blue Boyf..</p>
+            <p><b>Rs.699</b><del>Rs.1,999</del><span class="orange">(65% OFF)</span></p>
+            <div class="similar">
+                <p>MOVE TO BAG</p>
+            </div>
+        </div>
+        <!-- third product  -->
+        <div class="product-div">
+            <div class="product-image">
+                <span class="cross">X</span>
+                <img
+                    src="https://assets.myntassets.com/w_200,c_limit,fl_progressive,dpr_2.0/assets/images/18488004/2022/5/30/c38a5124-1782-48b7-a10c-ab187e0f4db11653898436007AthomTrendzSetof4CheckedPureCotton210GSMLightweightBathTowel1.jpg" />
+            </div>
+            <p> </p>
+            <p>Athom Trendz Set of 4 Chec</p>
+            <p><b>Rs.657</b><del>Rs.1,999</del><span class="orange">(65% OFF)</span></p>
+            <div class="similar">
+                <p>MOVE TO BAG</p>
+            </div>
+        </div>
+        <!-- fourth product   -->
+        <div class="product-div">
+            <div class="product-image">
+                <span class="cross">X</span>
+                <img
+                    src="https://assets.myntassets.com/w_200,c_limit,fl_progressive,dpr_2.0/assets/images/19574610/2022/8/20/5fd08f1c-a3ef-4fdd-9767-ebed2c76943e1660996236142DreamBeautyFashionBlackGeometricPrintTop1.jpg" />
+            </div>
+            <p></p>
+            <p>Dream Beauty Fashion wo...</p>
+            <p><b>Rs.373</b><del>Rs.1,099</del><span class="orange">(66% OFF)</span></p>
+            <div class="similar">
+                <p>MOVE TO BAG</p>
+            </div>
+        </div>
+        <!-- fifth product  -->
+        <div class="product-div">
+            <div class="product-image">
+                <span class="cross">X</span>
+                <img
+                    src="https://assets.myntassets.com/w_200,c_limit,fl_progressive,dpr_2.0/assets/images/11101422/2022/7/2/a0c5c7b8-2896-4350-91ec-d22b7ee96e081656746520586RustorangeWomenMaroonGreyPrintedA-LineDress1.jpg" />
+            </div>
+            <p></p>
+            <p>Rustorange Women Maroon..</p>
+            <p><b>Rs.1,208</b><del>Rs.3,099</del><span class="orange">(61% OFF)</span></p>
+            <div class="similar">
+                <p>MOVE TO BAG</p>
+            </div>
+        </div>
+        <!-- sixth product  -->
+        <div class="product-div">
+            <div class="product-image">
+                <span class="cross">X</span>
+                <img
+                    src="https://assets.myntassets.com/w_200,c_limit,fl_progressive,dpr_2.0/assets/images/1996777/2022/11/22/336445a8-fa32-4396-914a-2629b49465d31669112704759RoadsterMenBlackCottonPureCottonT-shirt1.jpg" />
+            </div>
+            <p></p>
+            <p>Roadster Men Black Cotton...</p>
+            <p><b>Rs.174</b><del>Rs.499</del><span class="orange">(65% OFF)</span></p>
+            <div class="similar">
+                <p>MOVE TO BAG</p>
+            </div>
+        </div>
+        <!-- seveth product  -->
+        <div class="product-div">
+            <div class="product-image">
+                <span class="cross">X</span>
+                <img
+                    src="https://assets.myntassets.com/w_200,c_limit,fl_progressive,dpr_2.0/assets/images/22729910/2023/4/11/24a664fc-8835-4eb7-8376-14d5b4c421c71681201588242KinseyGirlsMarvelAvengerBlackPantherPeachShortSleeveTshirt1.jpg" />
+            </div>
+            <p></p>
+            <p>KINSEY Girls Typographypr...</p>
+            <p><b>Rs.98</b><del>Rs.899</del><span class="orange">(89% OFF)</span></p>
+            <div class="similar">
+                <p>MOVE TO BAG</p>
+            </div>
+        </div>
+
+    </div>
+    <div id="footer-parent-div">
+        <div id="inner-align-div">
+            <div id="inside-of-inner-align-div">
+                <div id="Online-Useful">
+                    <div id="shopping">
+                        <h4><a class="anchor" href="#">ONLINE SHOPING</a></h4>
+                        <p><a class="anchor-grey" href="#">Men</a></p>
+                        <p><a class="anchor-grey" href="#">Women</a></p>
+                        <p><a class="anchor-grey" href="#">Kids</a></p>
+                        <p><a class="anchor-grey" href="#">Home & Living</a></p>
+                        <p><a class="anchor-grey" href="#">Beauty</a></p>
+                        <p><a class="anchor-grey" href="#">Gift Card</a></p>
+                        <p><a class="anchor-grey" href="#">Myntra Insider</a></p>
+                    </div>
+                    <div id="link">
+                        <h4><a class="anchor" href="#">USEFUL LINKS</a></h4>
+                        <p><a class="anchor-grey" href="#">Blog</a></p>
+                        <p><a class="anchor-grey" href="#">Careers</a></p>
+                        <p><a class="anchor-grey" href="#">Site Map</a></p>
+                        <p><a class="anchor-grey" href="#">Corporate Information</a></p>
+                        <p><a class="anchor-grey" href="#">Whitehat</a></p>
+                    </div>
+                </div>
+                <div id="cus-pro">
+                    <h4><a class="anchor" href="#">CUSTOMER POLICIES</a></h4>
+                    <p><a class="anchor-grey" href="#">Contact Us</a></p>
+                    <p><a class="anchor-grey" href="#">FAQ</a></p>
+                    <p><a class="anchor-grey" href="#">T&C</a></p>
+                    <p><a class="anchor-grey" href="#">Terms of Use</a></p>
+                    <p><a class="anchor-grey" href="#">Shipping</a></p>
+                    <p><a class="anchor-grey" href="#">Cancellation</a></p>
+                    <p><a class="anchor-grey" href="#">Returns</a></p>
+                    <p><a class="anchor-grey" href="#">Privacy Policy</a></p>
+                    <p><a class="anchor-grey" href="#">Grievance Officer</a></p>
+
+                </div>
+                <div id="exp-mob">
+                    <h4><a class="anchor" href="#">EXPERIENCE MYNTRA APP ON MOBILE</a></h4>
+                    <div id="play-image-div">
+                        <img class="play-img"
+                            src="https://constant.myntassets.com/web/assets/img/80cc455a-92d2-4b5c-a038-7da0d92af33f1539674178924-google_play.png" />
+                        <img class="apple-app-img"
+                            src="https://constant.myntassets.com/web/assets/img/bc5e11ad-0250-420a-ac71-115a57ca35d51539674178941-apple_store.png" />
+                    </div>
+                    <h4><a class="anchor" href="#">KEEP IN TOUCH</a></h4>
+                    <div>
+                        <a href="#"><i class="fa-brands fa-square-facebook fa-xl"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter fa-xl"></i></a>
+                        <a href="#"><i class="fa-brands fa-youtube fa-xl"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram fa-xl"></i></a>
+                    </div>
+                </div>
+                <div id="accredation">
+                    <div id="original">
+                        <img class="accreddation-pic"
+                            src="https://constant.myntassets.com/web/assets/img/6c3306ca-1efa-4a27-8769-3b69d16948741574602902452-original.png" />
+                        <div>
+                            <p class="accreddation-text"><strong>100% ORIGINAL</strong> guarantee for<br />all products
+                                at myntra.com</p>
+                        </div>
+                    </div>
+                    <div id="original">
+                        <img class="accreddation-pic"
+                            src="https://constant.myntassets.com/web/assets/img/ef05d6ec-950a-4d01-bbfa-e8e5af80ffe31574602902427-30days.png" />
+                        <div>
+                            <p class="accreddation-text"><strong>Return within 30days</strong> of<br /> receiving your
+                                order</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
